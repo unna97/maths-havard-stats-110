@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Birthday Problem Simulation | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="The Birthday Problem Simulation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html" />
+<meta property="og:url" content="https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-10T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-05-10T00:00:00-05:00","dateModified":"2020-05-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"BlogPosting","url":"https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html","headline":"The Birthday Problem Simulation","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/maths-havard-stats-110/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://unna97.github.io/maths-havard-stats-110/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/maths-havard-stats-110/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Birthday Problem Simulation | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="The Birthday Problem Simulation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html" />
+<meta property="og:url" content="https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-10T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-05-10T00:00:00-05:00","dateModified":"2020-05-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"BlogPosting","url":"https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html","headline":"The Birthday Problem Simulation","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://unna97.github.io/maths-havard-stats-110/feed.xml" title="fastpages" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/maths-havard-stats-110/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/maths-havard-stats-110/about/">About Me</a><a class="page-link" href="/maths-havard-stats-110/search/">Search</a><a class="page-link" href="/maths-havard-stats-110/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">The Birthday Problem Simulation</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-10T00:00:00-05:00" itemprop="datePublished">
+        May 10, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/maths-havard-stats-110/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/unna97/maths-havard-stats-110/tree/master/_notebooks/2020-05-10-BirthdayProblem.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/maths-havard-stats-110/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/unna97/maths-havard-stats-110/master?filepath=_notebooks%2F2020-05-10-BirthdayProblem.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/maths-havard-stats-110/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/unna97/maths-havard-stats-110/blob/master/_notebooks/2020-05-10-BirthdayProblem.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/maths-havard-stats-110/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-05-10-BirthdayProblem.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_party</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">n_choices</span> <span class="o">=</span> <span class="mi">365</span>
+<span class="n">n_simulations</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_choices</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_party</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_simulations</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span> <span class="n">n_party</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_simulations</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fe825b1f160&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar_chart</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_simulations</span><span class="p">),</span><span class="n">bar_chart</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;BarContainer object of 20 artists&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="unna97/maths-havard-stats-110"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/maths-havard-stats-110/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/maths-havard-stats-110/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/maths-havard-stats-110/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/maths-havard-stats-110/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/maths-havard-stats-110/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
