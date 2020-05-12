@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "The Birthday Problem Simulation",
-            "content": "The Birthday Paradox or Birthday Problem as simulated This is test notebook.Work in Progress . import random import matplotlib.pyplot as plt . n_party = 25 n_choices = 365 n_simulations = 100 a = [[random.choice(range(n_choices)) for i in range(n_party)] for j in range(n_simulations)] . x = [len(set(i)) == 25 for i in a] plt.plot(range(100),x) . [&lt;matplotlib.lines.Line2D at 0x18a6d206a48&gt;] .",
+            "content": "The Birthday Paradox or Birthday Problem as simulated This is test notebook.Work in Progress . import random import matplotlib.pyplot as plt . n_party = 25 n_choices = 365 n_simulations = 20 a = [[random.choice(range(n_choices)) for i in range(n_party)] for j in range(n_simulations)] . x = [len(set(i)) == n_party for i in a] plt.scatter(range(n_simulations),x) . &lt;matplotlib.collections.PathCollection at 0x7fe825b1f160&gt; . bar_chart = [sum(x[:i+1])/(i+1) for i in range(len(x))] plt.bar(range(n_simulations),bar_chart) . &lt;BarContainer object of 20 artists&gt; .",
             "url": "https://unna97.github.io/maths-havard-stats-110/2020/05/10/BirthdayProblem.html",
             "relUrl": "/2020/05/10/BirthdayProblem.html",
             "date": " • May 10, 2020"
