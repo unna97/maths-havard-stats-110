@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "The Birthday Problem Simulation",
-            "content": "import random import matplotlib.pyplot as plt . n_party = 25 n_choices = 365 n_simulations = 20 a = [[random.choice(range(n_choices)) for i in range(n_party)] for j in range(n_simulations)] . x = [len(set(i)) == n_party for i in a] plt.scatter(range(n_simulations),x) . &lt;matplotlib.collections.PathCollection at 0x7fe825b1f160&gt; . bar_chart = [sum(x[:i+1])/(i+1) for i in range(len(x))] plt.bar(range(n_simulations),bar_chart) . &lt;BarContainer object of 20 artists&gt; .",
+            "content": "import random import matplotlib.pyplot as plt import networkx as nx . n_party = 25 n_choices = 365 n_simulations = 20 a = [[random.choice(range(n_choices)) for i in range(n_party)] for j in range(n_simulations)] . x = [len(set(i)) == n_party for i in a] plt.scatter(range(n_simulations),x) . &lt;matplotlib.collections.PathCollection at 0x7f902a6f7a58&gt; . plt.plot(range(len(x)),x) . [&lt;matplotlib.lines.Line2D at 0x7f9027a5bd30&gt;] . bar_chart = [sum(x[:i+1])/(i+1) for i in range(len(x))] plt.bar(range(n_simulations),bar_chart) . &lt;BarContainer object of 20 artists&gt; . Below a graph is made and randomly labeled with the birthdays from one of the list set. . G = nx.Graph() for i in range(n_party): for j in range(i + 1,n_party): G.add_edge(i,j) nx.draw(G, with_labels=True,node_color = a[2]) plt.show() .",
             "url": "https://unna97.github.io/maths-havard-stats-110/jupyter/2020/05/10/BirthdayProblem.html",
             "relUrl": "/jupyter/2020/05/10/BirthdayProblem.html",
             "date": " • May 10, 2020"
