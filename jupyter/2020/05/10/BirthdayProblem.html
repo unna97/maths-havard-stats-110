@@ -157,7 +157,6 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide </span>
-
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -168,6 +167,73 @@ window.onload = wrap_img;
 </div>
 
     </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let the probablity that two people in the group with n_party share a birthday be p.</p>
+<p>Then, probablity that they won't share a birthday is $q = 1 - p$</p>
+<p>Selecting r objects out of n objects = $C(n,r) = (n)!/((n - r)!*(r)!)$</p>
+<p>Now,</p>
+<p>number of people in party, $r  = 2$,</p>
+<p>days in  year, $n = 356$</p>
+<p>then:</p>
+<p>$C(356, 2) =365!/((365 - 2)! * (2)!)$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">ans</span> <span class="o">*=</span> <span class="n">i</span>
+  <span class="k">return</span> <span class="n">ans</span>
+<span class="k">def</span> <span class="nf">p_birthday</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+  <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">r</span><span class="p">)))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="p">)</span>
+<span class="n">p_birthday</span><span class="p">(</span><span class="mi">365</span><span class="p">,</span><span class="mi">23</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>25852016738884976640000
+1.6323995040052926e+36
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.6323995040052926e+36</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
