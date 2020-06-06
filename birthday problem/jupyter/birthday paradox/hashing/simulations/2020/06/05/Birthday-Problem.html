@@ -3,36 +3,36 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>When is your birthday? | Statistics</title>
+<title>The Birthday Problem | Statistics</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="When is your birthday?" />
+<meta property="og:title" content="The Birthday Problem" />
 <meta name="author" content="Unnati Patel" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Birthday Problem visualized" />
-<meta property="og:description" content="The Birthday Problem visualized" />
+<meta name="description" content="Stuff related to statistics" />
+<meta property="og:description" content="Stuff related to statistics" />
 <link rel="canonical" href="https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html" />
 <meta property="og:url" content="https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html" />
 <meta property="og:site_name" content="Statistics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-05T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Unnati Patel"},"description":"The Birthday Problem visualized","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","headline":"When is your birthday?","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html"},"url":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Unnati Patel"},"description":"Stuff related to statistics","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","headline":"The Birthday Problem","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html"},"url":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/maths-havard-stats-110/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://unna97.github.io/maths-havard-stats-110/feed.xml" title="Statistics" /><link rel="shortcut icon" type="image/x-icon" href="/maths-havard-stats-110/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>When is your birthday? | Statistics</title>
+<title>The Birthday Problem | Statistics</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="When is your birthday?" />
+<meta property="og:title" content="The Birthday Problem" />
 <meta name="author" content="Unnati Patel" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Birthday Problem visualized" />
-<meta property="og:description" content="The Birthday Problem visualized" />
+<meta name="description" content="Stuff related to statistics" />
+<meta property="og:description" content="Stuff related to statistics" />
 <link rel="canonical" href="https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html" />
 <meta property="og:url" content="https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html" />
 <meta property="og:site_name" content="Statistics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-05T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Unnati Patel"},"description":"The Birthday Problem visualized","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","headline":"When is your birthday?","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html"},"url":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Unnati Patel"},"description":"Stuff related to statistics","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","headline":"The Birthday Problem","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html"},"url":"https://unna97.github.io/maths-havard-stats-110/birthday%20problem/jupyter/birthday%20paradox/hashing/simulations/2020/06/05/Birthday-Problem.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -87,7 +87,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">When is your birthday?</h1><p class="page-description">The Birthday Problem visualized</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-05T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">The Birthday Problem</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-05T00:00:00-05:00" itemprop="datePublished">
         Jun 5, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
